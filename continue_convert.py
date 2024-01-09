@@ -7,8 +7,11 @@ import os
 # from concurrent.futures import ProcessPoolExecutor
 
 # jsons =[f"split_300h/split_{i}.json" for i in range(1,20+1)]   # requires a new version of python
-jsons = ["split_300h/split_{}.json".format(i) for i in range(1, 20+1)]
-output_dir = "processed_wav_2t/"
+
+# output file directory
+output_dir = "processed_wav/"
+
+
 
 def get_total_seg_num(json_file):
     index = 1
