@@ -10,5 +10,5 @@ process_json() {
 
 # Launch processes in parallel
 for ((json_id=1; json_id<=$num_process; json_id++)); do
-    process_json "$json_id" &
+    process_json -a "split $json_id" "$json_id" &
 done

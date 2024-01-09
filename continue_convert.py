@@ -8,9 +8,9 @@ import os
 
 # jsons =[f"split_300h/split_{i}.json" for i in range(1,20+1)]   # requires a new version of python
 
-# output file directory
+# output file directory and json file location
 output_dir = "processed_wav/"
-
+input_json = f"split_300h/split_{sys.argv[1]}.json"
 
 
 def get_total_seg_num(json_file):
@@ -46,7 +46,7 @@ def audio_convert(json_file, seg_num):
             
             subprocess.call(["ffmpeg", "-i", path, "-ss", str(begin_time), "-to", str(end_time),"-loglevel", "quiet", "-ac", "1", "-ar", "16000", output_path])
             
-            print(f"=================<<<<<<<< {index}/{seg_num} >>>>>>>>=================")
+            print("pid-",os.getpid()," "f"=================<<<<<<<< {index}/{seg_num} >>>>>>>>=================")
             index += 1
     print(f"split_300h/split_{sys.argv[1]}.json split done :-)")
 
@@ -58,5 +58,5 @@ def audio_convert(json_file, seg_num):
 
 if __name__ == "__main__":
     # multi_process()
-    seg_num = get_total_seg_num(f"split_300h/split_{sys.argv[1]}.json")
-    audio_convert(f"split_300h/split_{sys.argv[1]}.json", seg_num)
+    seg_num = get_total_seg_num(input_json)
+    audio_convert(input_json, seg_num)
