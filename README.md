@@ -11,9 +11,9 @@
 `chmod +x conversion_control.sh` <br>
 
 之后在当前目录下运行 `nohup ./conversion_control.sh >log/split.log 2>&1 &` <br>
--> 程序将在后台运行，日志将存储与log/split.log 中 <br>
-* continue_convert.py 应该在dataset 目录下，就是说要和 audio/ 在同一个目录内 
+-> 程序将在后台运行，日志将存储于`log/split.log` 中 <br>
+* `continue_convert.py` 应该在 `dataset` 目录下，就是说要和 `audio/` 在同一个目录内 
 * 支持暂定process 后继续切分未完成的任务 
-* 更改output folder，到continue_convert.py 的第12行
+* 更改output folder，到`continue_convert.py` 的第12行
 
 
