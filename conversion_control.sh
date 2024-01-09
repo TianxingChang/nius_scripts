@@ -5,10 +5,10 @@ num_process=20
 
 process_json() {
     local json_id=$1
-    python continue_convert.py "$json_id"
+    exec -a "Splitting json_$json_id" python continue_convert.py "$json_id"
 }
 
 # Launch processes in parallel
 for ((json_id=1; json_id<=$num_process; json_id++)); do
-    process_json -a "split $json_id" "$json_id" &
+    process_json "$json_id" &
 done
