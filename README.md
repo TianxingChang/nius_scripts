@@ -1,8 +1,9 @@
-# scripts 
-根据指定json的 start & end time 进行多进程切割 opus源音频文件成若干【单通道，16k采样率】的.wav 文件并存储到processed_wav 文件夹
+# scripts segmentation + conversion
+## 脚本任务
+根据指定json的 start & end time 进行多进程切割 opus源音频文件操作，将这些文件转成若干【单通道，16k采样率】的.wav 文件并存储到processed_wav 文件夹
 
 
-## ffmpeg usage: 
+## 更改ffmpeg : 
 如果要更改ffmpeg命令， 去continue_convert.py 的 47 行（subprocess 执行的操作那里）。
 
 
